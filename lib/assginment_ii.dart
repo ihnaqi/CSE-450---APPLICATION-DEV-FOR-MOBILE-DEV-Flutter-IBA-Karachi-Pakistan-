@@ -126,12 +126,10 @@ class _MyCardState extends State<MyCard> {
           children: [
             Image(
               image: NetworkImage(widget.imageURL),
-              width: 400,
-              height: 300,
             ),
             ListTile(
               leading: CircleAvatar(
-                backgroundColor: Colors.white,
+                backgroundColor: Colors.grey,
                 child: Text(
                   widget.title[0].toUpperCase(),
                 ),
