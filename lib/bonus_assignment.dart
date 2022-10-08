@@ -94,6 +94,8 @@ class _BonusAssignmentState extends State<BonusAssignment> {
                           style: TextStyle(color: Colors.white),
                         ),
                         style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.green),
                           shape:
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
