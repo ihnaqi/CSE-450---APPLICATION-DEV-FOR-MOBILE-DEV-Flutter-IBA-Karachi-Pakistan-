@@ -4,11 +4,19 @@ import 'package:mid_practice/assginment_ii.dart';
 import 'package:mid_practice/assignment_i.dart';
 import 'package:mid_practice/bonus_assignment.dart';
 import 'package:mid_practice/call_backs.dart';
+import 'package:mid_practice/class_state/model.dart';
+import 'package:mid_practice/class_state/my_page.dart';
 import 'package:mid_practice/productcart/products.dart';
 import 'package:mid_practice/users_list.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => CounterModel(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -38,7 +46,8 @@ class MyApp extends StatelessWidget {
       // home: const CallBacks(),
       // home: const UserList(),
       // home: const APIs(),
-      home: const Products(),
+      // home: const Products(),
+      home: const MyPage(),
     );
   }
 }
