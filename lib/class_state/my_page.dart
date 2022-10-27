@@ -10,6 +10,8 @@ class MyPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController myController = TextEditingController();
+    int a = 34;
     return Scaffold(
       appBar: AppBar(
         title: const Text("Example Page"),
@@ -35,6 +37,28 @@ class MyPage extends StatelessWidget {
               },
               child: const Text("Navigate"),
             ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SizedBox(
+                height: 50,
+                width: 250,
+                child: TextFormField(
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    prefixIcon: Icon(Icons.edit),
+                    hintText: "Enter Value here",
+                    labelText: "Enter Value",
+                  ),
+                  controller: myController,
+                ),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () => context
+                  .read<CounterModel>()
+                  .changeTo(int.parse(myController.text.trim())),
+              child: const Text("Change To"),
+            )
           ],
         ),
       ),

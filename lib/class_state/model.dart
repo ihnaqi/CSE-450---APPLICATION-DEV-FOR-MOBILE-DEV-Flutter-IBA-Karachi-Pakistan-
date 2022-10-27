@@ -11,4 +11,11 @@ class CounterModel extends ChangeNotifier {
     _counter += 1;
     notifyListeners(); // setState((){}) for provider, notify all the listeners about the changes made.
   }
+
+  changeTo(int a) {
+    if (_counter != a) {
+      _counter = a;
+      notifyListeners();
+    }
+  }
 }
