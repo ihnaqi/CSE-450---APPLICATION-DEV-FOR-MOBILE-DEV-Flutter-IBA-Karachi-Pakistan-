@@ -47,10 +47,12 @@ android {
         applicationId "com.example.mid_practice"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-build-configuration.
-        minSdkVersion flutter.minSdkVersion
+        // minSdkVersion flutter.minSdkVersion
+        minSdkVersion 19
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        mutliDexEnablde true
     }
 
     buildTypes {
@@ -66,6 +68,13 @@ flutter {
     source '../..'
 }
 
+plugins{
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
+
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation platform('com.google.firebase:firebase-bom:31.0.2')
+    imiplementation 'com.google.firebase:firebase-analytics'
 }

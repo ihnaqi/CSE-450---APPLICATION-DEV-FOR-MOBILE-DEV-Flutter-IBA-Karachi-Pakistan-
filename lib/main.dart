@@ -9,8 +9,12 @@ import 'package:mid_practice/class_state/my_page.dart';
 import 'package:mid_practice/productcart/products.dart';
 import 'package:mid_practice/users_list.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(
     ChangeNotifierProvider(
       create: (_) => CounterModel(),
